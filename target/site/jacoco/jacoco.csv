@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+mashincoffee,ru.sbrf.coffee.model,CupOfCoffee,0,17,0,0,0,6,0,3,0,3
+mashincoffee,ru.sbrf.coffee.model,Order.OrderBuilder,6,21,0,0,0,1,1,4,1,4
+mashincoffee,ru.sbrf.coffee.model,Order,106,19,22,0,1,7,17,4,6,4
+mashincoffee,ru.sbrf.coffee.impl,CoffeeMachineVitek,138,75,15,3,16,10,23,4,14,4
+mashincoffee,ru.sbrf.coffee.impl,CoffeeMachineVitek.CoffeeMachineVitekBuilder,8,28,0,0,0,1,1,5,1,5
+mashincoffee,ru.sbrf.coffee.exception,CleaningCoffeeMachineException,15,0,0,0,5,0,2,0,2,0
+mashincoffee,ru.sbrf.coffee.exception,OutOfCoffeeBeansException,15,0,0,0,5,0,2,0,2,0
+mashincoffee,ru.sbrf.coffee.exception,OutOfWaterException,15,0,0,0,5,0,2,0,2,0
+mashincoffee,ru.sbrf.coffee.listingOfOrderParameters,TypeOfCoffee,0,45,0,0,0,5,0,2,0,2
+mashincoffee,ru.sbrf.coffee.listingOfOrderParameters,VolumeOfCup,0,60,0,0,0,5,0,2,0,2

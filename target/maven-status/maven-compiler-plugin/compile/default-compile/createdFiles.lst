@@ -1,0 +1,13 @@
+ru\sbrf\coffee\listingOfOrderParameters\TypeOfCoffee.class
+ru\sbrf\coffee\impl\CoffeeMachineVitek.class
+ru\sbrf\coffee\model\Order$OrderBuilder.class
+ru\sbrf\coffee\exception\CleaningCoffeeMachineException.class
+ru\sbrf\coffee\api\CupOfCoffee.class
+ru\sbrf\coffee\api\CoffeeMachine.class
+ru\sbrf\coffee\impl\CoffeeMachineVitek$CoffeeMachineVitekBuilder.class
+ru\sbrf\coffee\listingOfOrderParameters\VolumeOfCup.class
+ru\sbrf\coffee\exception\OutOfCoffeeBeansException.class
+ru\sbrf\coffee\model\Order.class
+ru\sbrf\coffee\api\AddIngredientInCoffeeMachine.class
+ru\sbrf\coffee\model\CupOfCoffee.class
+ru\sbrf\coffee\exception\OutOfWaterException.class

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CoffeeMachineVitek.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mashincoffee</a> &gt; <a href="index.source.html" class="el_package">ru.sbrf.coffee.impl</a> &gt; <span class="el_source">CoffeeMachineVitek.java</span></div><h1>CoffeeMachineVitek.java</h1><pre class="source lang-java linenums">package ru.sbrf.coffee.impl;
+
+import lombok.Builder;
+import lombok.Data;
+import ru.sbrf.coffee.api.AddIngredientInCoffeeMachine;
+import ru.sbrf.coffee.api.CoffeeMachine;
+import ru.sbrf.coffee.exception.CleaningCoffeeMachineException;
+import ru.sbrf.coffee.exception.OutOfCoffeeBeansException;
+import ru.sbrf.coffee.exception.OutOfWaterException;
+import ru.sbrf.coffee.model.CupOfCoffee;
+import ru.sbrf.coffee.model.Order;
+
+<span class="nc bnc" id="L13" title="All 12 branches missed.">@Data</span>
+<span class="pc" id="L14">@Builder</span>
+public class CoffeeMachineVitek implements CoffeeMachine, AddIngredientInCoffeeMachine {
+<span class="nc" id="L16">    private int cleanCounter;</span>
+<span class="nc" id="L17">    private int amountOfWater;</span>
+<span class="nc" id="L18">    private int amountOfCoffeeBeans;</span>
+
+    public CupOfCoffee makeCoffee(Order newOrder) {
+<span class="fc" id="L21">        checkingParameters(newOrder);</span>
+<span class="fc" id="L22">        amountOfWater -= newOrder.getVolumeOfCup().VolumeOfCup * 95;</span>
+<span class="fc" id="L23">        amountOfCoffeeBeans -= newOrder.getVolumeOfCup().VolumeOfCup * 15;</span>
+<span class="fc" id="L24">        cleanCounter++;</span>
+<span class="fc" id="L25">        return new CupOfCoffee(newOrder);</span>
+    }
+
+    private void checkingParameters(Order newOrder) {
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (amountOfWater &lt; newOrder.getVolumeOfCup().VolumeOfCup * 95) {</span>
+<span class="nc" id="L30">            throw new OutOfWaterException(0, &quot;Out of water&quot;);</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        } else if (amountOfCoffeeBeans &lt; newOrder.getVolumeOfCup().VolumeOfCup * 25) {</span>
+<span class="nc" id="L32">            throw new OutOfCoffeeBeansException(1, &quot;Out of coffee beans&quot;);</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        } else if (cleanCounter &gt;= 6) {</span>
+<span class="nc" id="L34">            throw new CleaningCoffeeMachineException(3, &quot;Barista, cleaning CoffeeMachine!&quot;);</span>
+        }
+<span class="fc" id="L36">    }</span>
+    @Override
+    public void clean() {
+<span class="nc" id="L39">        cleanCounter = 0;</span>
+<span class="nc" id="L40">    }</span>
+
+    @Override
+    public void addWater() {
+<span class="nc" id="L44">        amountOfWater = 1500;</span>
+<span class="nc" id="L45">    }</span>
+
+    @Override
+    public void addCoffeeBeans() {
+<span class="nc" id="L49">        amountOfCoffeeBeans = 500;</span>
+<span class="nc" id="L50">    }</span>
+
+    @Override
+    public void addAllIngredients() {
+<span class="nc" id="L54">        amountOfCoffeeBeans = 500;</span>
+<span class="nc" id="L55">        amountOfWater = 1500;</span>
+<span class="nc" id="L56">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
